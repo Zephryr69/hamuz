@@ -1,0 +1,8 @@
+.toast {
+  position: fixed; bottom: 2rem; right: 2rem; left: auto; background: var(--black); color: var(--cream);
+  padding: 1rem 2rem; font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.05em; z-index: 3000;
+  transform: translateY(100px); opacity: 0; transition: all 0.4s var(--transition);
+  display: flex; align-items: center; gap: 0.75rem; max-width: calc(100% - 2rem);
+}
+.toastShow { transform: translateY(0); opacity: 1; }
+.icon { color: var(--gold); }

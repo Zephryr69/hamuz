@@ -1,0 +1,54 @@
+.products { background: var(--cream); padding: 8rem 3rem; }
+.header { text-align: center; margin-bottom: 5rem; }
+.headerLabel { justify-content: center; }
+.headerLabel::before { display: none; }
+.sectionLabel {
+  font-family: var(--font-sans); font-size: 0.82rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;
+}
+.sectionTitle { font-family: var(--font-display); font-size: 3rem; font-weight: 600; line-height: 1.15; margin-bottom: 2rem; text-transform: uppercase; }
+.intro { font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; line-height: 1.8; font-weight: 300; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto; }
+.card {
+  position: relative; padding: 3rem; border: 1px solid rgba(197, 165, 90, 0.2);
+  transition: all 0.5s var(--transition); cursor: default;
+}
+.card:hover { border-color: var(--gold); box-shadow: 0 20px 60px rgba(0,0,0,0.06); transform: translateY(-4px); }
+.cardTop { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 2rem; }
+.tagline { font-family: var(--font-sans); font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.volume { font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-light); letter-spacing: 0.1em; }
+.image {
+  position: relative; width: 100%; height: 380px; background: var(--cream-dark);
+  margin-bottom: 2rem; overflow: hidden;
+}
+.image img { object-fit: cover; transition: transform 0.6s var(--transition); }
+.card:hover .image img { transform: scale(1.05); }
+.name { font-family: var(--font-display); font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; }
+.desc { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
+.quote {
+  font-family: var(--font-body); font-style: italic; font-weight: 500; font-size: 1.1rem; color: var(--gold-dark);
+  margin-bottom: 2rem; padding-left: 1rem; border-left: 2px solid var(--gold);
+}
+.pyramidToggle {
+  display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-sans); font-size: 0.85rem;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); background: none; border: none;
+  cursor: pointer; margin-bottom: 1rem; padding: 0;
+}
+.pyramidToggle svg { width: 12px; height: 12px; transition: transform 0.3s var(--transition); }
+.pyramidToggleActive svg { transform: rotate(180deg); }
+.pyramidContent { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--transition); }
+.pyramidContentOpen { max-height: 300px; }
+.pyramidRow { display: flex; padding: 0.75rem 0; border-bottom: 1px solid rgba(197, 165, 90, 0.15); align-items: flex-start; gap: 1rem; }
+.pyramidRow:last-child { border-bottom: none; }
+.pyramidLayer { font-family: var(--font-sans); font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); min-width: 60px; padding-top: 2px; }
+.pyramidNotes { font-size: 0.95rem; color: var(--text-muted); font-weight: 300; }
+.cta {
+  display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-sans); font-size: 0.85rem;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); text-decoration: none;
+  padding: 0.8rem 1.5rem; border: 1px solid var(--black); margin-top: 1.5rem;
+  transition: all 0.4s var(--transition); background: transparent; cursor: pointer;
+}
+.cta:hover { background: var(--black); color: var(--cream); }
+
+@media (max-width: 1024px) { .grid { grid-template-columns: 1fr; gap: 3rem; } }
+@media (max-width: 768px) { .sectionTitle { font-size: 2.2rem; } .card { padding: 2rem; } }

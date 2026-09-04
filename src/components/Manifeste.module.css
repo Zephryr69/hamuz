@@ -1,0 +1,27 @@
+.manifeste {
+  background: var(--black); color: var(--cream); text-align: center;
+  padding: 10rem 3rem; position: relative; overflow: hidden;
+}
+.manifeste::before {
+  content: '✦'; position: absolute; top: 3rem; left: 50%; transform: translateX(-50%);
+  font-size: 1.5rem; color: var(--gold); opacity: 0.5;
+}
+.label {
+  font-family: var(--font-sans); font-size: 0.82rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 3rem; display: flex; align-items: center; justify-content: center; gap: 1rem;
+}
+.label::before, .label::after { content: ''; width: 30px; height: 1px; background: var(--gold); opacity: 0.5; }
+.quote {
+  font-family: var(--font-display); font-size: 2.6rem; font-style: normal; font-weight: 600; line-height: 1.4;
+  max-width: 800px; margin: 0 auto 3rem; color: var(--cream);
+}
+.text { font-size: 1.15rem; color: rgba(250, 246, 241, 0.6); max-width: 600px; margin: 0 auto; line-height: 1.9; font-weight: 300; }
+.particles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.particle { position: absolute; width: 2px; height: 2px; background: var(--gold); border-radius: 50%; opacity: 0.3; animation: float 8s infinite ease-in-out; }
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
+  50% { transform: translateY(-30px) translateX(10px); opacity: 0.5; }
+}
+@media (max-width: 1024px) { .quote { font-size: 2rem; } }
+@media (max-width: 768px) { .manifeste { padding: 6rem 2rem; } .quote { font-size: 1.6rem; } }
+@media (max-width: 480px) { .quote { font-size: 1.3rem; } }

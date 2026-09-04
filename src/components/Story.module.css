@@ -1,0 +1,31 @@
+.story { background: var(--cream); display: flex; gap: 6rem; align-items: flex-start; padding: 8rem 3rem; }
+.storyLeft { flex: 1; max-width: 50%; }
+.sectionLabel {
+  font-family: var(--font-sans); font-size: 0.82rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem;
+}
+.sectionLabel::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+.sectionTitle { font-family: var(--font-display); font-size: 3rem; font-weight: 600; line-height: 1.15; margin-bottom: 2rem; text-transform: uppercase; }
+.storyQuote {
+  font-family: var(--font-display); font-size: 1.4rem; font-style: normal; font-weight: 600; line-height: 1.6;
+  color: var(--black); border-left: 2px solid var(--gold); padding-left: 2rem; margin-bottom: 2rem;
+}
+.storyText { font-size: 1.1rem; color: var(--text-muted); line-height: 1.9; max-width: 550px; font-weight: 300; }
+.storyRight { flex: 1; max-width: 45%; }
+.storyPoints { display: flex; flex-direction: column; gap: 2.5rem; }
+.storyPoint {
+  position: relative; padding-left: 2rem; border-left: 1px solid rgba(197, 165, 90, 0.3); transition: border-color 0.4s;
+}
+.storyPoint:hover { border-left-color: var(--gold); }
+.storyPointNumber { font-family: var(--font-sans); font-size: 0.8rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.5rem; }
+.storyPointTitle { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; }
+.storyPointDesc { font-size: 1rem; color: var(--text-muted); line-height: 1.7; font-weight: 300; }
+
+@media (max-width: 1024px) {
+  .story { flex-direction: column; gap: 3rem; padding: 5rem 2rem; }
+  .storyLeft, .storyRight { max-width: 100%; }
+}
+@media (max-width: 768px) {
+  .sectionTitle { font-size: 2.2rem; }
+  .storyQuote { font-size: 1.3rem; }
+}

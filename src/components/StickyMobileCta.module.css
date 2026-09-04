@@ -1,0 +1,31 @@
+.bar {
+  display: none;
+}
+@media (max-width: 768px) {
+  .bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 900;
+    padding: 0.9rem 1.5rem calc(0.9rem + env(safe-area-inset-bottom));
+    background: rgba(26, 26, 26, 0.94);
+    backdrop-filter: blur(12px);
+    text-align: center;
+  }
+  .btn {
+    display: inline-block;
+    width: 100%;
+    padding: 0.9rem;
+    background: var(--gold);
+    color: var(--black);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+}

@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #F2E9D8;
+  --cream-dark: #E4D3B0;
+  --black: #241B14;
+  --gold: #C98A2E;
+  --gold-light: #E0A94C;
+  --gold-dark: #9C6A1E;
+  --rust: #A6431F;
+  --rust-dark: #7E3117;
+  --white: #FFFFFF;
+  --text-muted: #5C4A38;
+  --text-light: #8A7660;
+  --font-display: 'Unbounded', sans-serif;
+  --font-exotic: 'Ojuju', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--black);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--transition), transform 0.8s var(--transition);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Frise géométrique zigzag — inspirée des motifs textiles ouest-africains (bogolan/kente) */
+.pattern-band {
+  height: 14px;
+  background-image: linear-gradient(135deg, var(--gold) 25%, transparent 25%),
+    linear-gradient(225deg, var(--gold) 25%, transparent 25%),
+    linear-gradient(45deg, var(--rust) 25%, transparent 25%),
+    linear-gradient(315deg, var(--rust) 25%, transparent 25%);
+  background-position: 0 0, 7px 0, 0 0, 7px 0;
+  background-size: 14px 14px;
+  background-repeat: repeat-x;
+  opacity: 0.85;
+}
+.pattern-band-dark {
+  background-image: linear-gradient(135deg, var(--gold-light) 25%, transparent 25%),
+    linear-gradient(225deg, var(--gold-light) 25%, transparent 25%),
+    linear-gradient(45deg, var(--rust) 25%, transparent 25%),
+    linear-gradient(315deg, var(--rust) 25%, transparent 25%);
+  background-position: 0 0, 7px 0, 0 0, 7px 0;
+  background-size: 14px 14px;
+  background-repeat: repeat-x;
+}
+
+/* Trait tissé — variante fine pour les séparateurs discrets */
+.woven-rule {
+  height: 3px;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--gold) 0px,
+    var(--gold) 5px,
+    var(--rust) 5px,
+    var(--rust) 10px,
+    transparent 10px,
+    transparent 14px
+  );
+  opacity: 0.7;
+  border: none;
 }
