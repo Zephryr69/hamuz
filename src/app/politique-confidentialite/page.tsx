@@ -17,9 +17,15 @@ export default function PolitiqueConfidentialite() {
 
         <div className={styles.content}>
           <p>
-            HAMUZ accorde une importance particulière à la protection de vos données personnelles. Cette page
-            explique quelles informations sont collectées sur ce site, pourquoi, et comment vous pouvez exercer
-            vos droits.
+            HAMUZ accorde une importance particulière à la protection de vos données personnelles. Le traitement
+            des données réalisé par ce site est encadré par la{" "}
+            <strong>loi n°2017-20 du 20 avril 2018 portant Code du Numérique en République du Bénin</strong> (Livre
+            5, relatif à la protection des données à caractère personnel), sous le contrôle de l&apos;
+            <strong>Autorité de Protection des Données Personnelles (APDP)</strong>.
+          </p>
+          <p>
+            Cette page explique quelles informations sont collectées sur ce site, pourquoi, et comment vous pouvez
+            exercer vos droits.
           </p>
 
           <h2>Responsable du traitement</h2>
@@ -51,9 +57,11 @@ export default function PolitiqueConfidentialite() {
 
           <h2>Vos droits</h2>
           <p>
-            Vous pouvez à tout moment demander l&apos;accès, la rectification ou la suppression de vos données
-            personnelles en écrivant à{" "}
-            <a href="mailto:hamuz.official@gmail.com">hamuz.official@gmail.com</a>.
+            Conformément à la loi n°2017-20, vous disposez d&apos;un droit d&apos;accès, de rectification et
+            d&apos;opposition concernant vos données personnelles. Vous pouvez exercer ces droits en écrivant à{" "}
+            <a href="mailto:hamuz.official@gmail.com">hamuz.official@gmail.com</a>, ou en vous adressant à
+            l&apos;APDP (<a href="https://www.apdp.bj" target="_blank" rel="noreferrer">www.apdp.bj</a>) si votre
+            demande n&apos;a pas été traitée de manière satisfaisante.
           </p>
 
           <h2>Hébergement</h2>

@@ -12,8 +12,8 @@
   --white: #FFFFFF;
   --text-muted: #5C4A38;
   --text-light: #8A7660;
-  --font-display: 'Unbounded', sans-serif;
-  --font-exotic: 'Ojuju', sans-serif;
+  --font-display: 'Ojuju', sans-serif;
+  --font-exotic: 'Berkshire Swash', cursive;
   --font-body: 'Inter', sans-serif;
   --font-sans: 'Inter', sans-serif;
   --transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);

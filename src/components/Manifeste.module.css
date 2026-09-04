@@ -12,7 +12,7 @@
 }
 .label::before, .label::after { content: ''; width: 30px; height: 1px; background: var(--gold); opacity: 0.5; }
 .quote {
-  font-family: var(--font-display); font-size: 2.6rem; font-style: normal; font-weight: 600; line-height: 1.4;
+  font-family: var(--font-exotic); font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 400; line-height: 1.35;
   max-width: 800px; margin: 0 auto 3rem; color: var(--cream);
 }
 .text { font-size: 1.15rem; color: rgba(250, 246, 241, 0.6); max-width: 600px; margin: 0 auto; line-height: 1.9; font-weight: 300; }
@@ -22,6 +22,4 @@
   0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
   50% { transform: translateY(-30px) translateX(10px); opacity: 0.5; }
 }
-@media (max-width: 1024px) { .quote { font-size: 2rem; } }
-@media (max-width: 768px) { .manifeste { padding: 6rem 2rem; } .quote { font-size: 1.6rem; } }
-@media (max-width: 480px) { .quote { font-size: 1.3rem; } }
+@media (max-width: 768px) { .manifeste { padding: 6rem 2rem; } }

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import "@fontsource/unbounded/500.css";
-import "@fontsource/unbounded/600.css";
-import "@fontsource/unbounded/700.css";
 import "@fontsource-variable/ojuju";
+import "@fontsource/berkshire-swash";
 import "@fontsource/inter/300.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";

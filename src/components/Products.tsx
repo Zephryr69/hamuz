@@ -6,6 +6,7 @@ import styles from "./Products.module.css";
 import { useSite } from "./site-context";
 
 type Profile = {
+  brand: string;
   name: string;
   tagline: string;
   description: string;
@@ -18,7 +19,8 @@ type Profile = {
 
 const profiles: Profile[] = [
   {
-    name: "Hamuz Flair Man",
+    brand: "Hamuz",
+    name: "Flair Man",
     tagline: "Eau de Parfum",
     description:
       "Le parfum de l'autorité et de la sagesse. Pour l'homme qui connaît sa place. Et on la lui reconnaît.",
@@ -33,7 +35,8 @@ const profiles: Profile[] = [
     imageAlt: "Flacon Hamuz Flair Man, verre facetté noir et couronne dorée",
   },
   {
-    name: "Hamuz Flair Woman",
+    brand: "Hamuz",
+    name: "Flair Woman",
     tagline: "Eau de Parfum",
     description:
       "La signature de l'élégance qui impose le respect. Pour la femme qui dirige sans élever la voix.",
@@ -62,6 +65,7 @@ function ProductCard({ profile, delay }: { profile: Profile; delay: number }) {
       <div className={styles.image}>
         <Image src={profile.image} alt={profile.imageAlt} fill sizes="(min-width: 1024px) 40vw, 90vw" style={{ objectFit: "cover" }} />
       </div>
+      <p className={styles.brandKicker}>{profile.brand}</p>
       <h3 className={styles.name}>{profile.name}</h3>
       <p className={styles.desc}>{profile.description}</p>
       <p className={styles.quote}>« {profile.quote} »</p>

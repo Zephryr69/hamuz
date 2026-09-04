@@ -1,7 +1,7 @@
 .footer { background: var(--black); color: var(--cream); padding: 6rem 3rem 3rem; }
 .top { text-align: center; margin-bottom: 4rem; }
-.title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.15; text-transform: uppercase; }
-.title em { font-style: normal; color: var(--gold-light); font-weight: 700; }
+.title { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 600; margin-bottom: 1.5rem; line-height: 1.15; overflow-wrap: break-word; }
+.title em { font-style: normal; font-family: var(--font-exotic); font-weight: 400; color: var(--gold-light); }
 .subtitle { font-size: 1rem; color: rgba(250, 246, 241, 0.5); margin-bottom: 2.5rem; font-weight: 300; }
 .label { justify-content: center; color: var(--gold); font-family: var(--font-sans); font-size: 0.82rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
 .form { display: flex; max-width: 500px; margin: 0 auto 1rem; gap: 0; }

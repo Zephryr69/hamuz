@@ -29,10 +29,10 @@
   z-index: 1;
 }
 .label { justify-content: center; font-family: var(--font-sans); font-size: 0.82rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
-.title { font-family: var(--font-display); font-size: 3rem; font-weight: 600; margin-bottom: 2rem; letter-spacing: 0.02em; text-transform: uppercase; }
+.title { font-family: var(--font-display); font-size: clamp(2rem, 6vw, 3rem); font-weight: 600; margin-bottom: 2rem; letter-spacing: 0.01em; overflow-wrap: break-word; }
 .title span { color: var(--gold); }
 .words { display: flex; justify-content: center; gap: 4rem; margin-bottom: 2rem; flex-wrap: wrap; }
-.word { font-family: var(--font-display); font-size: 1.5rem; font-style: normal; font-weight: 700; color: var(--gold); position: relative; }
+.word { font-family: var(--font-exotic); font-size: 1.9rem; font-weight: 400; color: var(--gold); position: relative; }
 .word::after { content: '·'; margin-left: 4rem; color: var(--gold); opacity: 0.5; }
 .word:last-child::after { display: none; }
 .text { font-size: 1.1rem; color: var(--text-muted); max-width: 550px; margin: 0 auto; line-height: 1.9; font-weight: 300; }
