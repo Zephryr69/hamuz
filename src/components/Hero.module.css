@@ -26,10 +26,10 @@
 }
 .heroTitle {
   font-family: var(--font-exotic);
-  font-weight: 400;
-  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 700;
+  font-size: clamp(2rem, 5.5vw, 3rem);
   margin-bottom: 1.5rem;
-  line-height: 1.15;
+  line-height: 1.2;
   color: var(--gold-light);
 }
 .heroSubtitle {

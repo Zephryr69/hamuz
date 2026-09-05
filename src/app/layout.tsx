@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "@fontsource-variable/ojuju";
-import "@fontsource/berkshire-swash";
+import "@fontsource/cinzel-decorative/400.css";
+import "@fontsource/cinzel-decorative/700.css";
 import "@fontsource/cinzel/400.css";
 import "@fontsource/cinzel/500.css";
 import "@fontsource/inter/300.css";
