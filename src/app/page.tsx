@@ -4,6 +4,7 @@ import Story from "@/components/Story";
 import Manifeste from "@/components/Manifeste";
 import Products from "@/components/Products";
 import Heritage from "@/components/Heritage";
+import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Modal from "@/components/Modal";
 import Toast from "@/components/Toast";
@@ -22,6 +23,7 @@ export default function Home() {
       <div className="pattern-band" />
       <Products />
       <Heritage />
+      <Faq />
       <div className="pattern-band pattern-band-dark" />
       <Footer />
       <Modal />

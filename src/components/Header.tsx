@@ -6,9 +6,9 @@ import styles from "./Header.module.css";
 
 const NAV_ITEMS = [
   { label: "Notre histoire", href: "#histoire" },
-  { label: "Le manifeste", href: "#manifeste" },
   { label: "Collection", href: "#collection" },
   { label: "Héritage", href: "#heritage" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Header() {

@@ -1,0 +1,26 @@
+import type { MetadataRoute } from "next";
+
+const BASE_URL = "https://hamuz.vercel.app"; // ⚠️ à remplacer par le vrai domaine une fois déployé
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    {
+      url: BASE_URL,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: `${BASE_URL}/mentions-legales`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/politique-confidentialite`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+  ];
+}

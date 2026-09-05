@@ -1,0 +1,68 @@
+.faq {
+  background: var(--cream);
+  padding: 8rem 3rem;
+}
+.header { max-width: 700px; margin: 0 auto 4rem; text-align: center; }
+.label {
+  justify-content: center;
+  font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;
+}
+.title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 600; }
+
+.list { max-width: 760px; margin: 0 auto; }
+.item {
+  border-bottom: 1px solid rgba(197, 138, 46, 0.25);
+}
+.question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--black);
+}
+.icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+.icon::before, .icon::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  background: var(--gold-dark);
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s var(--transition), opacity 0.3s;
+}
+.icon::before { width: 14px; height: 2px; }
+.icon::after { width: 2px; height: 14px; }
+.itemOpen .icon::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--transition);
+}
+.answerOpen { max-height: 400px; }
+.answerInner {
+  padding: 0 0 1.5rem;
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 640px;
+}
+
+@media (max-width: 768px) {
+  .faq { padding: 5rem 1.5rem; }
+  .question { font-size: 0.98rem; }
+}

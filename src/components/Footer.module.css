@@ -26,6 +26,13 @@
 }
 .social a:hover { color: var(--gold); }
 .social a svg { width: 18px; height: 18px; }
+.collab {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: rgba(250, 246, 241, 0.4);
+  margin-bottom: 3rem;
+}
 .divider {
   width: 100%;
   height: 2px;

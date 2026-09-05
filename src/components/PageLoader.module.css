@@ -1,0 +1,48 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  background: var(--black);
+  transition: opacity 0.6s var(--transition), visibility 0.6s;
+}
+.overlayHidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.mark {
+  width: 46px;
+  height: 46px;
+  position: relative;
+}
+.mark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(224, 169, 76, 0.25);
+  border-radius: 50%;
+}
+.mark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-top-color: var(--gold-light);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.word {
+  font-family: var(--font-royal);
+  font-size: 1.1rem;
+  letter-spacing: 0.4em;
+  color: var(--cream);
+  padding-left: 0.4em;
+}

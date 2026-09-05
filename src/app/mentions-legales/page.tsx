@@ -18,16 +18,19 @@ export default function MentionsLegales() {
         <div className={styles.content}>
           <h2>Éditeur du site</h2>
           <p>
-            Le site HAMUZ est édité par <span className={styles.placeholder}>[raison sociale / nom du propriétaire de la marque à compléter]</span>,{" "}
-            <span className={styles.placeholder}>[forme juridique à compléter, ex. entreprise individuelle]</span>, dont le siège
-            est situé à <span className={styles.placeholder}>[adresse à compléter]</span>.
+            Le site HAMUZ est édité par Mariella Behanzin, en tant que personne physique responsable de la marque
+            HAMUZ. À ce jour, HAMUZ n&apos;est pas encore constituée en société ; cette mention sera mise à jour
+            dès l&apos;immatriculation officielle de l&apos;activité.
           </p>
           <p>
-            Contact : <a href="mailto:hamuz.official@gmail.com">hamuz.official@gmail.com</a>
+            Localisation : Cotonou, Bénin
+            <br />
+            Contact : <a href="mailto:hamuz.official@gmail.com">hamuz.official@gmail.com</a> —{" "}
+            <a href="tel:+2290196531545">+229 01 96 53 15 45</a>
           </p>
 
           <h2>Directeur de la publication</h2>
-          <p><span className={styles.placeholder}>[nom du responsable de la publication à compléter]</span></p>
+          <p>Mariella Behanzin</p>
 
           <h2>Hébergement</h2>
           <p>

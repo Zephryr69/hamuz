@@ -6,5 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
+    sitemap: "https://hamuz.vercel.app/sitemap.xml", // ⚠️ à remplacer par le vrai domaine
   };
 }
