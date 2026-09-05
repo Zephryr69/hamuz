@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import styles from "./Modal.module.css";
 import { useSite } from "./site-context";
 
@@ -46,7 +47,7 @@ export default function Modal() {
         {!modalSuccess ? (
           <>
             <div className={styles.logo}>
-              H<span style={{ color: "var(--gold)" }}>♛</span>MUZ
+              <Image src="/hamuz-logo.png" alt="HAMUZ" width={160} height={44} className={styles.logoImg} />
             </div>
             <h3 className={styles.title}>Rejoindre la liste privée</h3>
             <p className={styles.text}>
