@@ -21,15 +21,14 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1.5rem 0;
-  background: none;
-  border: none;
   cursor: pointer;
-  text-align: left;
+  list-style: none;
   font-family: var(--font-body);
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--black);
 }
+.question::-webkit-details-marker { display: none; }
 .icon {
   flex-shrink: 0;
   width: 22px;
@@ -46,22 +45,35 @@
 }
 .icon::before { width: 14px; height: 2px; }
 .icon::after { width: 2px; height: 14px; }
-.itemOpen .icon::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
+.item[open] .icon::after { opacity: 0; transform: translate(-50%, -50%) rotate(90deg); }
 
-.answer {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s var(--transition);
-}
-.answerOpen { grid-template-rows: 1fr; }
 .answerInner {
-  overflow: hidden;
-  min-height: 0;
   padding: 0 0 1.5rem;
   font-size: 0.98rem;
   color: var(--text-muted);
   line-height: 1.8;
   max-width: 640px;
+}
+
+/* Amélioration progressive : petite animation d'entrée sur les navigateurs qui
+   supportent @starting-style (Chrome/Edge 117+, Safari 17.4+, Firefox 129+).
+   Sur les autres navigateurs, le contenu s'affiche simplement sans animation —
+   jamais de comportement cassé, juste moins de fioriture. */
+@supports (transition-behavior: allow-discrete) {
+  .answerInner {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition-behavior: allow-discrete;
+  }
+  .item:not([open]) .answerInner {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  @starting-style {
+    .item[open] .answerInner {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
 }
 
 @media (max-width: 768px) {

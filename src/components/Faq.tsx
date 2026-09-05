@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Faq.module.css";
 
 const faqs: { q: string; a: string }[] = [
@@ -47,8 +47,6 @@ const faqs: { q: string; a: string }[] = [
 ];
 
 export default function Faq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   return (
     <section className={styles.faq} id="faq">
       <div className={styles.header}>
@@ -56,24 +54,15 @@ export default function Faq() {
         <h2 className={`${styles.title} reveal reveal-delay-1`}>Vous vous demandez peut-être...</h2>
       </div>
       <div className={styles.list}>
-        {faqs.map((item, index) => {
-          const isOpen = openIndex === index;
-          return (
-            <div className={`${styles.item} ${isOpen ? styles.itemOpen : ""} reveal`} key={item.q}>
-              <button
-                className={styles.question}
-                onClick={() => setOpenIndex(isOpen ? null : index)}
-                aria-expanded={isOpen}
-              >
-                {item.q}
-                <span className={styles.icon} />
-              </button>
-              <div className={`${styles.answer} ${isOpen ? styles.answerOpen : ""}`}>
-                <p className={styles.answerInner}>{item.a}</p>
-              </div>
-            </div>
-          );
-        })}
+        {faqs.map((item) => (
+          <details className={`${styles.item} reveal`} name="faq" key={item.q}>
+            <summary className={styles.question}>
+              {item.q}
+              <span className={styles.icon} />
+            </summary>
+            <p className={styles.answerInner}>{item.a}</p>
+          </details>
+        ))}
       </div>
     </section>
   );

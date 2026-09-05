@@ -4,11 +4,14 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./Modal.module.css";
 import { useSite } from "./site-context";
+import { submitToPrivateList } from "@/lib/googleForm";
 
 export default function Modal() {
   const { modalOpen, modalSuccess, closeModal, submitModal } = useSite();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -25,12 +28,22 @@ export default function Modal() {
       document.body.style.overflow = "";
       setName("");
       setEmail("");
+      setError(false);
     }
   }, [modalOpen]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    submitModal();
+    setSubmitting(true);
+    setError(false);
+    try {
+      await submitToPrivateList(name, email);
+      submitModal();
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -69,8 +82,15 @@ export default function Modal() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <button type="submit">Rejoindre le cercle</button>
+              <button type="submit" disabled={submitting}>
+                {submitting ? "Envoi..." : "Rejoindre le cercle"}
+              </button>
             </form>
+            {error && (
+              <p className={styles.error}>
+                Une erreur est survenue. Réessayez, ou écrivez-nous directement à hamuz.official@gmail.com.
+              </p>
+            )}
           </>
         ) : (
           <div>

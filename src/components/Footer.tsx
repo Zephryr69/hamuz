@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./Footer.module.css";
 import { useSite } from "./site-context";
+import { submitToPrivateList } from "@/lib/googleForm";
 
 function InstagramIcon() {
   return (
@@ -31,15 +32,28 @@ function WhatsappIcon() {
 }
 
 export default function Footer() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
   const { showToast } = useSite();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setEmail("");
-    showToast("Inscription réussie ! Bienvenue ✦");
+    setSubmitting(true);
+    setError(false);
+    try {
+      await submitToPrivateList(name, email);
+      setSubmitted(true);
+      setName("");
+      setEmail("");
+      showToast("Inscription réussie ! Bienvenue ✦");
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -57,6 +71,14 @@ export default function Footer() {
 
         <form className={`${styles.form} reveal reveal-delay-3`} onSubmit={handleSubmit}>
           <input
+            type="text"
+            placeholder="Votre prénom"
+            required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            aria-label="Prénom"
+          />
+          <input
             type="email"
             placeholder="Votre adresse email"
             required
@@ -64,9 +86,16 @@ export default function Footer() {
             onChange={(e) => setEmail(e.target.value)}
             aria-label="Adresse email"
           />
-          <button type="submit">S&apos;inscrire</button>
+          <button type="submit" disabled={submitting}>
+            {submitting ? "..." : "S'inscrire"}
+          </button>
         </form>
         {submitted && <p className={styles.success}>✓ Merci ! Vous êtes maintenant dans la liste privée.</p>}
+        {error && (
+          <p className={styles.error}>
+            Une erreur est survenue. Réessayez, ou écrivez à hamuz.official@gmail.com.
+          </p>
+        )}
       </div>
 
       <div className={`${styles.social} reveal`}>
