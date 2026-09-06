@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     title: "HAMUZ — Le Luxe Élévateur",
     description: "Une maison d'élégance africaine née d'une histoire d'amour au-delà des différences.",
   },
+  verification: {
+    google: "LvXHldCApwPtQChTzTEzPPfFMwS39dCZtRSNxKomdJY",
+  },
 };
 
 export default function RootLayout({
